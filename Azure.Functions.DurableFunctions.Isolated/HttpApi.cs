@@ -11,7 +11,6 @@ namespace Azure.Functions.DurableFunctions.Isolated
     public class HttpApi
     {
         private ILogger Logger;
-        private string eventName = "DurableHttpApivent";
         private string correlationId = string.Empty;
 
         private static ConcurrentDictionary<string, TaskCompletionSource<SampleResponse>> requests = new ConcurrentDictionary<string, TaskCompletionSource<SampleResponse>>();
