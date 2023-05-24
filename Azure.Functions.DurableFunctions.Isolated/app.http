@@ -28,3 +28,14 @@ Accept-Language: en-US,en;q=0.5
 {
     ""
 }
+
+###
+
+POST http://localhost:7104/api/HttpApiResponse
+Content-Type: application/text
+Accept-Language: en-US,en;q=0.5
+
+{
+    ""
+}
+

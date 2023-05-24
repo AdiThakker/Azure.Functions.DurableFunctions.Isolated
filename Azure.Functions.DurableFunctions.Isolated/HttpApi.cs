@@ -18,7 +18,7 @@ namespace Azure.Functions.DurableFunctions.Isolated
         [Function("HttpRequest")]
         public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req, FunctionContext executionContext)
         {
-            Logger = executionContext.GetLogger("Function1_HttpStart");
+            Logger = executionContext.GetLogger("HttpRequest");
             correlationId = Guid.NewGuid().ToString();
             var payload = new StreamReader(req.Body).ReadToEnd();
 
@@ -29,7 +29,7 @@ namespace Azure.Functions.DurableFunctions.Isolated
             var result = await tcs.Task;
             var response = req.CreateResponse(HttpStatusCode.OK);
             await response.WriteAsJsonAsync(result);
-            return response;            
+            return response;
         }
 
         [Function(nameof(HttpApiResponse))]
