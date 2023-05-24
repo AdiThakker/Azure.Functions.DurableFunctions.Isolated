@@ -1,0 +1,30 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+POST http://localhost:7104/api/DurableHttpRequest
+Content-Type: application/text
+Accept-Language: en-US,en;q=0.5
+
+{
+    "Hello Durable HttpApi"
+}
+
+HTTP/1.1 200 OK
+
+###
+
+
+GET http://localhost:7104/api/DurableHttpApiResponse
+
+###
+
+GET http://localhost:7104/api/HttpRequest
+
+###
+
+POST http://localhost:7104/api/HttpApiResponse
+Content-Type: application/text
+Accept-Language: en-US,en;q=0.5
+
+{
+    ""
+}
